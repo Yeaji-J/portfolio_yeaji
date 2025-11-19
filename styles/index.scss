@@ -1,6 +1,6 @@
 @use "./common.scss" as *;
 
-body {
+body {width:100vw; overflow-x:hidden;
     header {
         position:fixed; left:0; top:0; z-index:999;
         width:100%; height:80px; padding:0 80px;
@@ -24,6 +24,7 @@ body {
     main {
         #cover {position:relative; z-index:997; height:100vh;
             background: url(../images/portfolio_bg8.png) center/cover no-repeat;
+            border-bottom:$border;
             #ellipse_container {
                 position:absolute; right:0; top:50%; transform:translateY(-50%) rotate(-20deg); z-index:998;
                 width:1500px; height:900px;
@@ -69,13 +70,14 @@ body {
         #about {
             height:100vh;
             background: url(../images/portfolio_source.png) center/cover no-repeat;
-            @include flex-row; justify-content:space-between; align-items:center; padding:0 100px;
+            @include flex-row; align-items:center; padding:0 auto; justify-content:center;
+            border-bottom: $border;
             // 공통 p-20 , sub_copy & ability_lists>li 수정
             h2 {font-size:$font-size-h2-28; font-weight:$font-weight-bold; @include basic_txt;}
             p {@include basic_p}
             // 개별
             .photo {
-                width:320px; height:442px;
+                width:320px; height:442px; margin:0 40px;
                 border-top-left-radius:500px; border-top-right-radius:500px;
                 overflow:hidden;
                 img {
@@ -84,8 +86,10 @@ body {
                 }
             }
             .info {
+                width:30%; height:100%;
+                @include flex-col; gap:32px; justify-content:center; padding: 0 80px;
                 .intro {
-                    @include flex-col; gap:32px;
+                    width:100%; @include flex-col; gap:32px;
                     h2 {
                         span {@include basic_p; padding:0 8px;}
                     }
@@ -94,20 +98,23 @@ body {
                 // border
                 .personal_info {
                     @include flex-col; gap:8px;
-                    border-top:$border;
+                    border-top:$border; padding-top:32px;
                     address {@include basic_p;}
                 }
             }
             .detail {
+                width:35%; height:100%;
                 padding:0 80px;
-                @include flex-col; gap:48px;
+                @include flex-col; gap:48px; justify-content:center;
                 border-left:$border;
                 //공통
                 h2 {margin-bottom:20px;}
                 //개별
                 .abilities {
                     .ability_lists {
-                        li {font-size:$font-size-p-18; line-height:200%;}
+                        li {
+                            font-size:$font-size-p-18; line-height:200%;
+                        }
                     }
                 }
                 .skills {
@@ -133,57 +140,71 @@ body {
             }
         }
         #project {
-            background-color:$color-point;
+            background-color:$color-point; width:100vw;
+            @include flex-row;
             #sidebar {
-                position:sticky; left:0; top:0;
-                width:12.5%; height:100vh; padding:180px 30px;
+                width:12%; padding:180px 30px;
                 border-right:$border;
                 .contents {
+                    position:sticky; left:0; top:180px; z-index:999;
                     @include flex-col; flex-flow:wrap; gap:28px; align-items:center;
                     li {
                         a {font-size:$font-size-p-14; font-weight:$font-weight-med; @include basic_txt;}
                     }
                 }
             }
-            .project_wrap {
-                @include flex-row; width:87.5%; right:0;
-                .project_txt {
-                    @include flex-col;
-                    .project_desc {
-                        @include flex-col; gap:40px;
-                        h3 {font-size:$font-size-h3-32; font-weight:$font-weight-bold; @include basic_txt;}
-                        .project_detail,.skill_detail {font-size:$font-size-p-18; @include basic_wide_txt;}
-                        .tools {
-                            h4 {@include basic_p; font-weight:$font-weight-med;}
-                            .tools_icon {
-                                @include flex-row; gap:20px;
-                                li {
-                                    width:50px; height:50px;
-                                    img {width:100%; height:100%;}
+            .project_container {
+                width: 87.5%;
+                .project_wrap {
+                    @include flex-row; height:1000px;
+                    border-bottom:$border;
+                    .project_txt {
+                        @include flex-col; align-items:center; justify-content:center; width:45%;
+                        .project_desc {
+                            width:100%; height:100%; padding:0 80px;
+                            @include flex-col; gap:40px; justify-content:center;
+                            h3 {font-size:$font-size-h3-32; font-weight:$font-weight-bold; @include basic_txt;}
+                            .project_detail,.skill_detail {font-size:$font-size-p-18; @include basic_wide_txt;}
+                            .tools {
+                                @include flex-col; gap:16px;
+                                h4 {@include basic_p; font-weight:$font-weight-med;}
+                                .tools_icon {
+                                    @include flex-row; gap:20px;
+                                    li {
+                                        width:50px; height:50px;
+                                        img {width:100%; height:100%; object-position:center; object-fit:cover;}
+                                    }
                                 }
                             }
                         }
+                        .buttons {
+                            width:100%; padding:20px 0;
+                            @include flex-row; gap:48px; justify-content:center; align-items:center;
+                            border-top:$border;
+                            button {
+                                width:210px; height:46px;
+                                padding:15px 36px;
+                                border:$border; border-radius: 50%;
+                            }
+                        }
                     }
-                    .buttons {
-                        padding:0 20px;
-                        @include flex-row; justify-content:space-between; align-items:center;
-                        border-top:$border;
-                        button {
-                            width:190px; height:46px;
-                            padding:15px 36px;
-                            background:$color-white;
+                    .swiper {width:55%; height:100%; border-right:$border;
+                        .swiper-wrapper {
+                            .swiper-slide {
+                                img {height:100%; object-fit:cover; display:block;}
+                            }
                         }
                     }
                 }
-                .swiper {
-                    width:50%; height:100%;
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {width:100%; height:100%;}
-                        }
-                    }
+                //개별
+                #esthermall, #alternativestereo {
+                    background:url(../images/portfolio_bg8.png) center/cover no-repeat;
+                    .swiper {border-right:0; border-left:$border;}
                 }
             }
+        }
+        #graphic_design {
+            
         }
     }
 }
