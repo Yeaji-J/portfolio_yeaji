@@ -1,0 +1,53 @@
+$font-size-h1-64:4rem;
+$font-size-h2-28:1.75rem;
+$font-size-h3-32:2rem;
+$font-size-p-30:1.875rem;
+$font-size-p-20:1.25rem;
+$font-size-p-18:1.125rem;
+$font-size-p-16:1rem;
+$font-size-p-14:0.875rem;
+$font-size-p-12:0.75rem;
+$font-weight-med:500;
+$font-weight-sbold:600;
+$font-weight-bold:700;
+$border:1px solid #222;
+$color-point:#E8F1C7;
+$color-white:#fff;
+
+@mixin basic_txt {
+    line-height:160%; letter-spacing:-2%;
+}
+@mixin basic_wide_txt {
+    line-height:200%; letter-spacing:-2%;
+}
+
+@mixin h1 {
+    font-size:$font-size-h1-64;
+    font-weight:$font-weight-sbold;
+    @include basic_txt;
+}
+@mixin basic_p {
+    font-size:$font-size-p-20;
+    /* font-size:reg */
+    @include basic_txt;
+}
+@mixin big_p { 
+    font-size:$font-size-p-30;
+    @include basic_txt;
+} 
+@mixin small_p { 
+    font-size:$font-size-p-16;
+    /* font-size:reg */
+    @include basic_txt;
+} 
+@mixin xsmall_p {
+    font-size:$font-size-p-12;
+    /* font-size:reg */
+    @include basic_txt;
+}
+@mixin flex-row {
+    display:flex; flex-flow:row nowrap;
+}
+@mixin flex-col {
+    display:flex; flex-flow:column nowrap;
+}

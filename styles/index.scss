@@ -1,0 +1,189 @@
+@use "./common.scss" as *;
+
+body {
+    header {
+        position:fixed; left:0; top:0; z-index:999;
+        width:100%; height:80px; padding:0 80px;
+        @include flex-row; justify-content:space-between; align-items:center;
+        border-bottom:$border;
+        #logo {
+            margin-left:80px;
+            a {
+                @include small_p; font-weight:$font-weight-med;
+            }
+        }
+        nav {
+            ul {
+                @include flex-row; gap:40px;
+                li {
+                a {@include small_p;}
+                }
+            }
+        }
+    }
+    main {
+        #cover {position:relative; z-index:997; height:100vh;
+            background: url(../images/portfolio_bg8.png) center/cover no-repeat;
+            #ellipse_container {
+                position:absolute; right:0; top:50%; transform:translateY(-50%) rotate(-20deg); z-index:998;
+                width:1500px; height:900px;
+                margin: 50px auto;
+                .ellipse_wrap {
+                    position:relative; width:100%; height:100%;
+                    .ellipse_outline { /* 타원 윤곽선 */
+                        position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+                        width:1000px; height:500px;
+                        border:$border; border-radius:50%;
+                    }
+                    .dot {/* 움직이는 점 */
+                        position:absolute; width:16px; height:16px;
+                        background:black; border-radius:50%;
+                    }
+                }
+            }
+            #sns {
+                position:absolute; left:0; top:0;
+                width:80px; height:100%; text-align:center;
+                ul {height:100%; padding:100px 0;
+                    @include flex-col; justify-content:flex-end; gap:40px;
+                    border-right:$border;
+                    li {
+                        a {
+                            .youtube_icon_mini {width:32px; height:32px;}
+                            .instagram_icon_mini {width:28px; height:28px;}
+                        }
+                    }
+                }
+            }
+            .title {
+                position:absolute; left:80px; bottom:0;
+                padding:100px; @include flex-col; gap:24px;
+                h1 {@include h1; margin-bottom:36px;}
+                .sub_title {
+                    @include big_p;
+                    strong {font-weight:$font-weight-med;}
+                }
+                desc {@include basic_p;}
+            }
+        }
+        #about {
+            height:100vh;
+            background: url(../images/portfolio_source.png) center/cover no-repeat;
+            @include flex-row; justify-content:space-between; align-items:center; padding:0 100px;
+            // 공통 p-20 , sub_copy & ability_lists>li 수정
+            h2 {font-size:$font-size-h2-28; font-weight:$font-weight-bold; @include basic_txt;}
+            p {@include basic_p}
+            // 개별
+            .photo {
+                width:320px; height:442px;
+                border-top-left-radius:500px; border-top-right-radius:500px;
+                overflow:hidden;
+                img {
+                    width:100%; height:100%;
+                    object-position:center;
+                }
+            }
+            .info {
+                .intro {
+                    @include flex-col; gap:32px;
+                    h2 {
+                        span {@include basic_p; padding:0 8px;}
+                    }
+                    .sub_copy {font-size:$font-size-p-16;}
+                }
+                // border
+                .personal_info {
+                    @include flex-col; gap:8px;
+                    border-top:$border;
+                    address {@include basic_p;}
+                }
+            }
+            .detail {
+                padding:0 80px;
+                @include flex-col; gap:48px;
+                border-left:$border;
+                //공통
+                h2 {margin-bottom:20px;}
+                //개별
+                .abilities {
+                    .ability_lists {
+                        li {font-size:$font-size-p-18; line-height:200%;}
+                    }
+                }
+                .skills {
+                    .skill_lists {
+                        @include flex-row; gap:28px;
+                        li {
+                            @include flex-col; gap:4px; align-items:center;
+                            img {width:52px; height:52px;}
+                            span {@include xsmall_p;}
+                        }
+                    }
+                }
+                .archive {
+                    .channel {
+                        @include flex-row; gap:28px;
+                        li {
+                            a {
+                                img {width:40px; height:40px;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #project {
+            background-color:$color-point;
+            #sidebar {
+                position:sticky; left:0; top:0;
+                width:12.5%; height:100vh; padding:180px 30px;
+                border-right:$border;
+                .contents {
+                    @include flex-col; flex-flow:wrap; gap:28px; align-items:center;
+                    li {
+                        a {font-size:$font-size-p-14; font-weight:$font-weight-med; @include basic_txt;}
+                    }
+                }
+            }
+            .project_wrap {
+                @include flex-row; width:87.5%; right:0;
+                .project_txt {
+                    @include flex-col;
+                    .project_desc {
+                        @include flex-col; gap:40px;
+                        h3 {font-size:$font-size-h3-32; font-weight:$font-weight-bold; @include basic_txt;}
+                        .project_detail,.skill_detail {font-size:$font-size-p-18; @include basic_wide_txt;}
+                        .tools {
+                            h4 {@include basic_p; font-weight:$font-weight-med;}
+                            .tools_icon {
+                                @include flex-row; gap:20px;
+                                li {
+                                    width:50px; height:50px;
+                                    img {width:100%; height:100%;}
+                                }
+                            }
+                        }
+                    }
+                    .buttons {
+                        padding:0 20px;
+                        @include flex-row; justify-content:space-between; align-items:center;
+                        border-top:$border;
+                        button {
+                            width:190px; height:46px;
+                            padding:15px 36px;
+                            background:$color-white;
+                        }
+                    }
+                }
+                .swiper {
+                    width:50%; height:100%;
+                    .swiper-wrapper {
+                        .swiper-slide {
+                            img {width:100%; height:100%;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

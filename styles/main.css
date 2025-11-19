@@ -1,0 +1,328 @@
+@charset "UTF-8";
+body header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 80px;
+  padding: 0 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+body header #logo {
+  margin-left: 80px;
+}
+body header #logo a {
+  font-size: 1rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+body header nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 40px;
+}
+body header nav ul li a {
+  font-size: 1rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #cover {
+  position: relative;
+  z-index: 997;
+  height: 100vh;
+  background: url(../images/portfolio_bg8.png) center/cover no-repeat;
+}
+body main #cover #ellipse_container {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-20deg);
+  z-index: 998;
+  width: 1500px;
+  height: 900px;
+  margin: 50px auto;
+}
+body main #cover #ellipse_container .ellipse_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body main #cover #ellipse_container .ellipse_wrap .ellipse_outline { /* 타원 윤곽선 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 500px;
+  border: 1px solid #222;
+  border-radius: 50%;
+}
+body main #cover #ellipse_container .ellipse_wrap .dot { /* 움직이는 점 */
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: black;
+  border-radius: 50%;
+}
+body main #cover #sns {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  text-align: center;
+}
+body main #cover #sns ul {
+  height: 100%;
+  padding: 100px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  gap: 40px;
+  border-right: 1px solid #222;
+}
+body main #cover #sns ul li a .youtube_icon_mini {
+  width: 32px;
+  height: 32px;
+}
+body main #cover #sns ul li a .instagram_icon_mini {
+  width: 28px;
+  height: 28px;
+}
+body main #cover .title {
+  position: absolute;
+  left: 80px;
+  bottom: 0;
+  padding: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 24px;
+}
+body main #cover .title h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 160%;
+  letter-spacing: -2%;
+  margin-bottom: 36px;
+}
+body main #cover .title .sub_title {
+  font-size: 1.875rem;
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #cover .title .sub_title strong {
+  font-weight: 500;
+}
+body main #cover .title desc {
+  font-size: 1.25rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #about {
+  height: 100vh;
+  background: url(../images/portfolio_source.png) center/cover no-repeat;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+body main #about h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #about p {
+  font-size: 1.25rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #about .photo {
+  width: 320px;
+  height: 442px;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  overflow: hidden;
+}
+body main #about .photo img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+body main #about .info .intro {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+}
+body main #about .info .intro h2 span {
+  font-size: 1.25rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+  padding: 0 8px;
+}
+body main #about .info .intro .sub_copy {
+  font-size: 1rem;
+}
+body main #about .info .personal_info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  border-top: 1px solid #222;
+}
+body main #about .info .personal_info address {
+  font-size: 1.25rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #about .detail {
+  padding: 0 80px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 48px;
+  border-left: 1px solid #222;
+}
+body main #about .detail h2 {
+  margin-bottom: 20px;
+}
+body main #about .detail .abilities .ability_lists li {
+  font-size: 1.125rem;
+  line-height: 200%;
+}
+body main #about .detail .skills .skill_lists {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 28px;
+}
+body main #about .detail .skills .skill_lists li {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+  align-items: center;
+}
+body main #about .detail .skills .skill_lists li img {
+  width: 52px;
+  height: 52px;
+}
+body main #about .detail .skills .skill_lists li span {
+  font-size: 0.75rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #about .detail .archive .channel {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 28px;
+}
+body main #about .detail .archive .channel li a img {
+  width: 40px;
+  height: 40px;
+}
+body main #project {
+  background-color: #E8F1C7;
+}
+body main #project #sidebar {
+  position: sticky;
+  left: 0;
+  top: 0;
+  width: 12.5%;
+  height: 100vh;
+  padding: 180px 30px;
+  border-right: 1px solid #222;
+}
+body main #project #sidebar .contents {
+  display: flex;
+  flex-flow: column nowrap;
+  flex-flow: wrap;
+  gap: 28px;
+  align-items: center;
+}
+body main #project #sidebar .contents li a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #project .project_wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 87.5%;
+  right: 0;
+}
+body main #project .project_wrap .project_txt {
+  display: flex;
+  flex-flow: column nowrap;
+}
+body main #project .project_wrap .project_txt .project_desc {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+body main #project .project_wrap .project_txt .project_desc h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 160%;
+  letter-spacing: -2%;
+}
+body main #project .project_wrap .project_txt .project_desc .project_detail, body main #project .project_wrap .project_txt .project_desc .skill_detail {
+  font-size: 1.125rem;
+  line-height: 200%;
+  letter-spacing: -2%;
+}
+body main #project .project_wrap .project_txt .project_desc .tools h4 {
+  font-size: 1.25rem;
+  /* font-size:reg */
+  line-height: 160%;
+  letter-spacing: -2%;
+  font-weight: 500;
+}
+body main #project .project_wrap .project_txt .project_desc .tools .tools_icon {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+body main #project .project_wrap .project_txt .project_desc .tools .tools_icon li {
+  width: 50px;
+  height: 50px;
+}
+body main #project .project_wrap .project_txt .project_desc .tools .tools_icon li img {
+  width: 100%;
+  height: 100%;
+}
+body main #project .project_wrap .project_txt .buttons {
+  padding: 0 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #222;
+}
+body main #project .project_wrap .project_txt .buttons button {
+  width: 190px;
+  height: 46px;
+  padding: 15px 36px;
+  background: #fff;
+}
+body main #project .project_wrap .swiper {
+  width: 50%;
+  height: 100%;
+}
+body main #project .project_wrap .swiper .swiper-wrapper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=main.css.map */
