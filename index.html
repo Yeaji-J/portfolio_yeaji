@@ -246,45 +246,13 @@
             <h3>Graphic Design</h3>
             <div class="swiper" id="design_collection">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"><img src="#" alt=""></div>
+                    <div class="swiper-slide"><img src="#" alt=""></div>
+                    <div class="swiper-slide"><img src="#" alt=""></div>
+                    <div class="swiper-slide"><img src="#" alt=""></div>
                 </div>
             </div>
         </section>
-        <!-- <div id="ellipse-container">
-            <div class="ellipse-outline"></div>
-            <div class="dot"></div>
-        </div>
-        
-        
-        <script>
-        const dot = document.querySelector('.dot');
-        const container = document.getElementById('ellipse-container');
-        
-        const cx = container.clientWidth / 2;
-        const cy = container.clientHeight / 2;
-        
-          const a = 200; // 타원 가로 반지름
-          const b = 100; // 타원 세로 반지름
-        
-        let theta = 0;
-        
-        function animate() {
-            theta += 0.02;
-        
-            const x = cx + a * Math.cos(theta) - dot.clientWidth / 2;
-            const y = cy + b * Math.sin(theta) - dot.clientHeight / 2;
-        
-            dot.style.left = x + "px";
-            dot.style.top = y + "px";
-        
-            requestAnimationFrame(animate);
-        }
-        
-        animate();
-        </script> -->
     </main>
     <footer id="contact">
         <h3>Let's Work Together !</h3>
@@ -297,6 +265,7 @@
     </footer>
     <script>
         const mockupSwiper = new Swiper ('.swiper',{
+            loop:true,
         })
     </script>
 </body>
