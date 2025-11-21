@@ -381,5 +381,9 @@ body main #graphic_design {
   height: 100vh;
   background-color: #E8F1C7;
 }
+body footer {
+  height: 100vh;
+  background: #E8F1C7;
+}
 
 /*# sourceMappingURL=main.css.map */
